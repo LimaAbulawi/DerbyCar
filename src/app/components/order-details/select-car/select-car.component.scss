@@ -1,0 +1,12 @@
+
+.lima{
+    owl-carousel-o {
+        ::ng-deep {
+            .owl-stage {
+                .owl-item {
+                    // width: 182px !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+    <nav [ngClass]="{'active' : isShown}" class="absolute top-0 bottom-0 right-0 ">
+        <div class=" bg-[#ff9700] h-[100vh]  relative w-[70px] lg:w-[400px] main-nav" [ngClass]="{'z-20' : isShown}">
+            <button class="burger-icon absolute top-4 right-5" (click)="isShown=!isShown">
+                <img src="../../assets/menu.png" class="icon" alt="">
+            </button>
+            <ul class="mx-auto social-icons absolute top-0 left-0 bottom-0 w-[70px]"
+                [ngClass]="{'center-items' : isShown}">
+                <li class="lg:hidden">
+                    <a href="">
+                        <i class="fa-brands fa-instagram text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+                    </a>
+                </li>
+                <li class="lg:hidden">
+                    <a href="">
+                        <i class="fa-brands fa-facebook text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+                    </a>
+                </li>
+                <li class="lg:hidden">
+                    <a href="">
+                        <i class="fa-brands fa-twitter text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- asid  -->
+            <div class="side-bar" [ngClass]="{'active' : isShown}">
+                <div class="text-center flex mx-auto">
+                    <ul class="main-menu">
+                        <li><a routerLink="" (click)="isShown=!isShown">Home</a></li>
+                        <li><a routerLink="/details">Rent A Car</a></li>
+                        <!-- <li><a routerLink="/ourcars" (click)="isShown=!isShown">Our Cars </a></li> -->
+                        <li><a routerLink="/aboutus" (click)="isShown=!isShown">About Us </a></li>
+                        <li><a routerLink="/contactus" (click)="isShown=!isShown">Contact US </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div dir="ltr">
+        <div class=" ml-6 lg:ml-10">
+            <nav>
+                <div class="mt-6 ">
+                    <!-- <img src="../../../../assets/Group 9.png" alt=""> -->
+                    <img src="../../../../assets/Group 9.png" class=" md:hidden" alt="">
+                    <img src="../../../../assets/Group 2@2x.png" class="hidden md:block w-[15%] " alt="">
+                </div>
+            </nav>
+        <router-outlet></router-outlet>
+    </div>

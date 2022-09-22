@@ -1,0 +1,46 @@
+<div class="container">
+  <div  class="flex items-baseline mt-12 mx-6">
+    <img src="../../../../assets/Path 22.png" alt="" class="mr-3">
+    <div class="details">
+      Order Details
+    </div>
+  </div>
+  <div class="mt-10">
+    <form action="" class="" [formGroup]="orderForm" (ngSubmit)="submited()">
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+        </div>
+        <div class="col-12">
+          <!-- phone -->
+          <label for="" class="formcontrollabel">
+            Phone Number
+          </label>
+          <input type="text" class="form-control" placeholder="+971 123123123" formControlName="phone">
+        </div>
+        <div class="col-12">
+          <!-- email -->
+          <label for="" class="formcontrollabel">
+            Your Email
+          </label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="w-48">
+          <div class="next relative">
+            Next
+            <button *ngIf="!orderForm.valid" type="submit" class="absolute nextBall addNew cursorNotAllowed" disabled>
+              <img src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt=""></button>
+            <button *ngIf="orderForm.valid" type="submit" class="absolute nextBall first-line:addNew cursor-pointer">
+              <img src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt=""></button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <!-- <button (click)="scroll(lima)">Click to scroll</button> -->
+  <!-- <div class="mt-44" #lima>Your target</div> -->
+</div>

@@ -1,0 +1,23 @@
+<div class="container text-center mt-12 ">
+
+    <div class="font-semibold mb-3">We Send 4-digit number to your phone</div>
+    <div class="font-semibold">Please Enter it to confirm your booking</div>
+
+    <div class="flex justify-center mt-14">
+        <input type="text" (input)="onInput($event)" minlength="1" maxlength="1" placeholder="0" class="otp">
+        <input type="text" (input)="onInput($event)" minlength="1" maxlength="1" placeholder="1" class="otp">
+        <input type="text" (input)="onInput($event)" minlength="1" maxlength="1" placeholder="2" class="otp">
+        <input type="text" (input)="onInput($event)" minlength="1" maxlength="1" placeholder="3" class="otp">
+    </div>
+    <div class="font-semibold mb-3 mt-10">I don’t received it , <a for="" class="text-derby ">
+            Send again
+        </a> </div>
+    <!-- Confirm button  -->
+    <div class="w-40  mx-auto">
+        <div class="mt-44 next relative font-semibold ">
+            Confirm
+            <button type="button" (click)="submited()" class="absolute nextBall first-line:addNew cursor-pointer"> <img
+                    src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt=""></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="flex items-baseline mt-10 ">
+    <img src="../../../../assets/Path 22.png" alt="" class="mr-3">
+    <div class="text-[#ff9700] text-xl font-semibold ">Let’s Rent a Car</div>
+</div>
+<div class=" text-4xl md:text-5xl lg:text-[81px] font-semibold mt-[7%] lg:mt-[2%]">We Rent a Car</div>
+
+<div class="flex items-center mt-[3%]">
+    <div class="w-24 ">
+        <owl-carousel-o [options]="frequency">
+            <ng-template carouselSlide>
+                <div class="w-[255px]">
+                    <div class="text-[#ff9700] text-3xl font-semibold ">Daily</div>
+                    <!-- <img src="../../../../assets/Daily.png" alt="" class="daily"> -->
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="w-[255px]">
+                    <div class="text-[#ff9700] text-3xl font-semibold ">weekly</div>
+                    <!-- <img src="../../../../assets/Daily.png" alt="" class="daily"> -->
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="w-[255px]">
+                    <div class="text-[#ff9700] text-[26px] font-semibold">Monthly</div>
+                    <!-- <img src="../../../../assets/Daily.png" alt="" class="daily"> -->
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+    <div class="solidCol"></div>
+</div>
+<img src="../../../../assets/pngaaa.com-396718.png" class="absolute  w-[88%]  mt-[10%] md:hidden" alt="">
+<img src="../../../../assets/pngaaa@2x.png"
+    class="absolute  hidden md:block  w-[800px] md:w-[550px] lg:w-7/12 lg:top-[250px] right-[5%] " alt="">
+
+<div class="flex items-center mt-[55%] md:mt-[244px] lg:mt-[172px] ">
+    <div class="relative nextBall r0" (click)="RrentNow()">
+        <img src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt="">
+    </div>
+    <div class=" text-xl font-semibold md:text-2xl">Rent Now</div>
+</div>
+<div>
+    <div class="flex items-baseline lg:hidden mt-[9%] md:mt-[4%] ">
+
+        <img src="../../../../assets/Path 22.png" alt="" class="mr-3">
+        <div class=" text-xl md:text-2xl font-semibold text-[#ff9700]">Our Cars</div>
+    </div>
+    <div class=" lg:hidden mt-8 lima">
+        <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ff9700] ">
+                    <div class="image-container" style="background-image: url(../../../../assets/1DS48_GG2.png)">
+
+                    </div>
+
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ff9700] ">
+                    <div class="image-container" style="background-image: url(../../../../assets/LIMA.png)">
+
+                    </div>
+
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ff9700] ">
+                    <div class="image-container" style="background-image: url(../../../../assets/1DS48_GG2.png)">
+
+                    </div>
+
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ff9700] ">
+                    <div class="image-container" style="background-image: url(../../../../assets/1DS48_GG2.png)">
+
+                    </div>
+
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ff9700] ">
+                    <div class="image-container" style="background-image: url(../../../../assets/1DS48_GG2.png)">
+                    </div>
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>
+<!-- <div class="text-sm  absolute bottom-1 ">
+        Made With Passion in <span class="text-[#ff9700]">WeCan</span> , Copyright © 2022
+    </div> -->

@@ -1,0 +1,146 @@
+<!-- main nav -->
+<!-- <nav [ngClass]="{'active' : isShown,'secoudery-nav' : !isShown}" class="absolute top-0 bottom-0 right-0 z-[999999]">
+    <div class=" bg-[#ff9700] h-[100vh]  relative w-[70px] lg:w-[400px] main-nav" [ngClass]="{'z-20' : isShown}">
+         -->
+
+
+<nav [ngClass]="{'active, bg-[#ff9700] ' : isShown,'secoudery-nav , bg-transparent' : !isShown}" class="fixed top-0 bottom-0 right-0 z-[999999] 
+  main-nav ">
+    <button class="burger-icon absolute top-8 right-2" (click)="isShown=!isShown">
+        <img src="../../assets/menu.png" class="icon" alt="">
+    </button>
+    <ul class="mx-auto social-icons absolute top-0 left-0 bottom-0 w-[70px] " [ngClass]="{'center-items' : isShown}">
+        <li class="lg:hidden">
+            <a href="">
+                <i class="fa-brands fa-instagram text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+            </a>
+        </li>
+        <li class="lg:hidden">
+            <a href="">
+                <i class="fa-brands fa-facebook text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+            </a>
+        </li>
+        <li class="lg:hidden">
+            <a href="">
+                <i class="fa-brands fa-twitter text-3xl" [ngClass]="{'text-white' : isShown}"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- logo in mid screen -->
+<nav class="nav2 hidden md:block">
+    <div class="container flex items-center justify-between">
+        <img src="../../../../assets/Group 2@2x.png" class="w-[15%] " alt="">
+        <ul class="flex">
+            <li class="mx-3">
+                <a href="">
+                    <i class="fa-brands fa-facebook text-2xl"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="">
+                    <i class="fa-brands fa-twitter text-2xl"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="md:flex md:flex-wrap mobile-row-reverse md:ml-6">
+    <div class=" col-md-6 " [ngClass]="{'col-md-9' : select}">
+        <div [ngClass]="{'d-block' : !Order , 'hidden' : Order}">
+            <app-details (showRentalId)="rentalTermId(show)" (newItemEvent)="addItem($event)"
+                firstname="firstname($event)">
+            </app-details>
+        </div>
+
+        <!--  [ngClass]="{'d-block' : Order , 'hidden' : !Order , 'mt-80' : margin , 'mt-0' : !margin }" -->
+        <div #show class="trans" [ngClass]="{'active' : Order}">
+            <div [ngClass]="{'block' : !select , 'hidden' : select}">
+                <app-rental-term (selectCarId)="selectcarId(selectcar)" (selectCarEvent)="selectCar($event)">
+                </app-rental-term>
+            </div>
+        </div>
+
+
+        <!--[ngClass]="{'block' : select , 'hidden' : !select  , 'mt-80' : margin1 , 'mt-0' : !margin1}" -->
+        <div #selectcar class="trans" [ngClass]="{'active' : select}">
+            <div [ngClass]="{'block' : !showotp , 'hidden' : showotp}">
+                <app-select-car (OtpId)="OtpId(otp)" (OtpEvent)="showOtp($event)" *ngIf="select"></app-select-car>
+            </div>
+        </div>
+
+        <!-- [ngClass]="{'d-block' : showotp , 'hidden' : !showotp  , 'mt-80' : margin2 , 'mt-0' : !margin2}" -->
+        <div #otp class="trans" [ngClass]="{'active' : showotp}">
+            <div [ngClass]="{'block' : !showDone , 'hidden' : showDone}">
+                <app-otp (doneEvent)="showdone($event)" (doneId)="doneId(done)"></app-otp>
+            </div>
+        </div>
+
+        <!-- [ngClass]="{'d-block' : showDone , 'hidden' : !showDone , 'mt-64' : margin3 , 'mt-0' : !margin3 }" -->
+        <div #done class="trans" [ngClass]="{'active' : showDone}">
+            <app-done></app-done>
+        </div>
+    </div>
+
+    <div class=" col-md-5  content">
+        <nav class="nav1 flex-col md:!shadow-none" [ngClass]="{'pb-1' : showotp,'shadow-none' : isShown}">
+            <div class="container">
+                <div class="basicNav md:!hidden" dir="rtl">
+                    <button class="burger-icon  top-0 " (click)="isShown=!isShown">
+                    </button>
+                    <div class="detailslogo">
+                        <img src="../../../assets/detailslogo.png" class="" alt="">
+                    </div>
+                </div>
+                <div class="trans" [ngClass]="{'active' : Order}">
+                    <div class="flex items-baseline mt-8 md-padding">
+                        <div class="whitePath"></div>
+                        <div class="whiteDetails ml-1">
+                            Order Details
+                        </div>
+                    </div>
+                    <div class="mt-2 text-base md-padding">Hello <label class="text-white text-base"> LAST
+                            NAME</label>,
+                    </div>
+                    <div class="trans" [ngClass]="{'active' : select}">
+                        <div class="mt-2 text-base  md-padding">Duration Form <label class="text-white text-base">
+                                01/01/2021</label>,
+                        </div>
+                        <div class="mt-2 text-base md-padding">To<label class="text-white text-base">
+                                05/01/2021</label>,
+                        </div>
+                    </div>
+                    <div class="trans" [ngClass]="{'active' : showotp}">
+                        <img class="float-right w-80 md:hidden" src="../../../assets/1DS48_GG2.png">
+                        <img class="float-right  w-96  hidden md:block " src="../../../assets/1DS48_GG2@2x.png">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="side-bar" [ngClass]="{'active' : isShown}">
+    <div class="text-center flex mx-auto">
+        <ul class="main-menu">
+            <li>
+                <a routerLink="/home">
+                    Home
+                </a>
+            </li>
+            <li><a routerLink="/details">Rent A Car</a></li>
+            <!-- <li><a routerLink="/ourcars">Our Cars</a></li> -->
+            <li><a href="">About Us </a></li>
+            <li><a href="">Contact US </a></li>
+        </ul>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

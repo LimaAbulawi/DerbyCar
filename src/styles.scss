@@ -1,0 +1,141 @@
+/* You can add global styles to this file, and also import other style files */
+
+// tailwind 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// ngx-owl-carousel-o
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+// bootstrap 5.2.1
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+.details {
+    color: #ff9700;
+    font-weight: 600;
+}
+
+.cursorNotAllowed {
+    cursor: not-allowed !important;
+
+}
+
+.form-control {
+    background: #E4E4E4;
+    height: 42px;
+    border-radius: 23px;
+    border: 0;
+    margin-bottom: 15px;
+    padding: 1.5rem 1rem;
+}
+
+.form-control::placeholder {
+    color: black;
+    opacity: 1;
+    /* Firefox */
+    font-size: 13px;
+}
+
+.formcontrollabel {
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 14px;
+}
+
+.next {
+    border: 1px solid #FF9700;
+    border-radius: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    text-align: start;
+}
+
+.select .next {
+    margin-top: 136px;
+}
+
+.nextBall {
+    margin-right: 1rem
+        /* 16px */
+    ;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 151 0 / var(--tw-bg-opacity));
+    border-radius: 9999px;
+    width: 4rem
+        /* 64px */
+    ;
+    height: 4rem
+        /* 64px */
+    ;
+    top: 0;
+    right: -28px;
+}
+
+.r0 {
+    right: 0 !important;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.social-icons li {
+    margin-bottom: 28px;
+}
+
+.social-icons.center-items {
+    justify-content: center;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    background-color: #E4E4E4;
+}
+
+.whitePath {
+    width: 81px;
+    height: 0px;
+    /* UI Properties */
+    border: 2px solid var(--unnamed-color-ffffff);
+    border: 2px solid #FFFFFF;
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.whiteDetails {
+    color: white;
+    font-weight: 600;
+}
+
+.slide {
+    width: 157px;
+    height: 157px;
+    padding-top: 16px;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.image-container {
+    width: 200px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.slash{
+    width: 55px;
+    border: 2px solid #FF9000;
+    opacity: 1;
+    height: 0px;
+}
