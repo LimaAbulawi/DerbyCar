@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
 
   @Output() showRentalId = new EventEmitter<any>();
   @Output() firstname = new EventEmitter<any>();
-
+  num: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -20,9 +20,9 @@ export class DetailsComponent implements OnInit {
 
   orderForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
-    lastName: new FormControl(''),
-    phone: new FormControl(''),
-    email: new FormControl(''),
+    lastName: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.compose([Validators.email, Validators.required])),
   });
 
   // scroll(el: HTMLElement) {
@@ -31,16 +31,34 @@ export class DetailsComponent implements OnInit {
 
   submited() {
     if (!this.orderForm.valid) {
-      debugger
       console.log(this.orderForm.value);
       this.orderForm.markAllAsTouched();
     }
-    this.showRentalId.emit("show");
-
-    this.newItemEvent.emit(true);
-    this.firstname.emit(this.orderForm.value.firstName);
-    
-    console.log(this.orderForm.value);
+    if (this.orderForm.valid) {
+      this.showRentalId.emit("show");
+      this.newItemEvent.emit(true);
+      this.firstname.emit(this.orderForm.value.firstName);
+      console.log(this.orderForm.value);
+    }
     // el.scrollIntoView({behavior: 'smooth'});
   }
+  placeholder: any | undefined;
+
+  onInput(event: any) {
+
+    event.target.value = this.destroyMask(event.target.value);
+    // if (event.target.value == "") {
+    //   this.num = true;
+    // }else{
+    //   this.num = false;
+    // }
+    // event.target.value = this.createMask(this.placeholder);
+  }
+  destroyMask(event: any) {
+
+    return event.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  }
+  // createMask(event: any) {
+  //   return event.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+  // }
 }  

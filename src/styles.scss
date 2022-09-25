@@ -29,7 +29,8 @@ body {
     background: #E4E4E4;
     height: 42px;
     border-radius: 23px;
-    border: 0;
+    border: 1;
+    border-color:transparent;
     margin-bottom: 15px;
     padding: 1.5rem 1rem;
 }
@@ -138,4 +139,16 @@ body {
     border: 2px solid #FF9000;
     opacity: 1;
     height: 0px;
+}
+.solidCol {
+    width: 0px;
+    height: 55px;
+    /* UI Properties */
+    border: 2px solid #333333;
+    opacity: 1;
+}
+.errorLabel {
+    font-size: 14px;
+    --tw-text-opacity: 1;
+    color: rgb(225 29 72 / var(--tw-text-opacity));
 }

@@ -1,0 +1,28 @@
+.solidCol {
+    border-width: 1px;
+    border-color: #858585;
+    height: 34px;
+    border-radius: 2px;
+}
+
+.phoneInput {
+    height: 70%;
+    background-color: transparent;
+    width: 100%;
+}
+
+.phoneInput::placeholder {
+    color: black;
+}
+
+.form-control {
+    padding: 0.375rem 0.75rem;
+}
+
+.lima {
+    columns: 3;
+}
+
+.customFormControl {
+    border: 0;
+}

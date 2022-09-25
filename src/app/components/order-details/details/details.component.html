@@ -1,37 +1,88 @@
 <div class="container">
-  <div  class="flex items-baseline mt-12 mx-6">
+  <div class="flex items-baseline mt-12 mx-6">
     <img src="../../../../assets/Path 22.png" alt="" class="mr-3">
     <div class="details">
       Order Details
     </div>
   </div>
-  <div class="mt-10">
+  <div class="mt-6">
     <form action="" class="" [formGroup]="orderForm" (ngSubmit)="submited()">
       <div class="row">
+        <!-- firstName  -->
         <div class="col-6">
-          <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+          <!-- firstName is required -->
+          <label class="errorLabel opacity-0 float-right"
+            [ngClass]="{'opacity-100': (this.orderForm.get('firstName')?.touched && this.orderForm.get('firstName')?.hasError('required'))}">
+            <i class="fad fa-exclamation"></i>
+            firstName is required
+          </label>
+          <input type="text" class="form-control" placeholder="First name" formControlName="firstName"
+            [ngClass]="{'!border-rose-600': (this.orderForm.get('firstName')?.touched && this.orderForm.get('firstName')?.hasError('required'))}">
         </div>
+        <!-- lastName -->
         <div class="col-6">
-          <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+          <!-- lastName is required -->
+          <label class="errorLabel opacity-0 float-right"
+            [ngClass]="{'opacity-100': (this.orderForm.get('lastName')?.touched && this.orderForm.get('lastName')?.hasError('required'))}">
+            <i class="fad fa-exclamation"></i>
+            lastName is required
+          </label>
+          <input type="text" class="form-control" placeholder="Last name" formControlName="lastName"
+            [ngClass]="{'!border-rose-600': (this.orderForm.get('lastName')?.touched && this.orderForm.get('lastName')?.hasError('required'))}">
         </div>
         <div class="col-12">
           <!-- phone -->
-          <label for="" class="formcontrollabel">
-            Phone Number
-          </label>
-          <input type="text" class="form-control" placeholder="+971 123123123" formControlName="phone">
+          <div class="flex justify-between">
+            <label for="" class="formcontrollabel">
+              Phone Number
+            </label>
+            <!-- Phone is required -->
+            <label class="errorLabel opacity-0"
+              [ngClass]="{'opacity-100': (this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required'))}">
+              <i class="fad fa-exclamation"></i>
+              phone is required
+            </label>
+            <!-- phone must 9 numbers -->
+            <label class="errorLabel "
+            *ngIf="this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength')">
+              <i class="fad fa-exclamation"></i>
+              phone must be 9 numbers
+            </label>
+          </div>
+          <div class="form-control flex items-center py-0"
+            [ngClass]="{'!border-rose-600': this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required') || this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength') }">
+            +971
+            <div class="solidCol border-[1px] ml-2">
+            </div>
+            <input (input)="onInput($event)" minlength="9" maxlength="9" type="text"
+              class="form-control mb-0 customFormControl !h-[40px]" placeholder="123123123" formControlName="phone">
+          </div>
         </div>
         <div class="col-12">
-          <!-- email -->
-          <label for="" class="formcontrollabel">
-            Your Email
-          </label>
-          <input type="text" class="form-control" formControlName="email">
+          <div class="flex justify-between">
+            <label class="formcontrollabel">
+              Your Email
+            </label>
+            <!-- email is required -->
+            <label class="errorLabel opacity-0"
+              [ngClass]="{'opacity-100': (this.orderForm.get('email')?.touched && this.orderForm.get('email')?.hasError('required'))}">
+              <i class="fad fa-exclamation"></i>
+              email is required
+            </label>
+            <!-- must be valid email -->
+            <label class="errorLabel "
+              *ngIf="this.orderForm.get('email')?.touched && this.orderForm.get('email')?.hasError('email')">
+              <i class="fad fa-exclamation"></i>
+              email must be valid 
+            </label>
+          </div>
+          <input type="text" class=" mb-0 form-control" formControlName="email"
+            [ngClass]="{'!border-rose-600': (this.orderForm.get('email')?.touched && this.orderForm.get('email')?.hasError('required')) || (this.orderForm.get('email')?.touched && this.orderForm.get('email')?.hasError('email')) }">
         </div>
         <div class="w-48">
           <div class="next relative">
             Next
-            <button *ngIf="!orderForm.valid" type="submit" class="absolute nextBall addNew cursorNotAllowed" disabled>
+            <button *ngIf="!orderForm.valid" type="submit" class="absolute nextBall addNew cursorNotAllowed">
               <img src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt=""></button>
             <button *ngIf="orderForm.valid" type="submit" class="absolute nextBall first-line:addNew cursor-pointer">
               <img src="../../../../assets/arrow-small-left.png" class="absolute left-6 top-6 " alt=""></button>

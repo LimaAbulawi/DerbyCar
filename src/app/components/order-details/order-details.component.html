@@ -10,17 +10,17 @@
         <img src="../../assets/menu.png" class="icon" alt="">
     </button>
     <ul class="mx-auto social-icons absolute top-0 left-0 bottom-0 w-[70px] " [ngClass]="{'center-items' : isShown}">
-        <li class="lg:hidden">
+        <li class="md:hidden">
             <a href="">
                 <i class="fa-brands fa-instagram text-3xl" [ngClass]="{'text-white' : isShown}"></i>
             </a>
         </li>
-        <li class="lg:hidden">
+        <li class="md:hidden">
             <a href="">
                 <i class="fa-brands fa-facebook text-3xl" [ngClass]="{'text-white' : isShown}"></i>
             </a>
         </li>
-        <li class="lg:hidden">
+        <li class="md:hidden">
             <a href="">
                 <i class="fa-brands fa-twitter text-3xl" [ngClass]="{'text-white' : isShown}"></i>
             </a>
@@ -127,18 +127,18 @@
 </div>
 
 
-<div class="side-bar" [ngClass]="{'active' : isShown}">
+<div class="side-bar" [ngClass]="{'active' : isShown }">
     <div class="text-center flex mx-auto">
-        <ul class="main-menu">
-            <li>
+        <ul class="main-menu" >
+            <li [ngClass]="{ 'hidden' :!isShown }">
                 <a routerLink="/home">
                     Home
                 </a>
             </li>
-            <li><a routerLink="/details">Rent A Car</a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a routerLink="/details">Rent A Car</a></li>
             <!-- <li><a routerLink="/ourcars">Our Cars</a></li> -->
-            <li><a href="">About Us </a></li>
-            <li><a href="">Contact US </a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a href="">About Us </a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a href="">Contact US </a></li>
         </ul>
     </div>
 </div>
