@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { countries } from 'src/app/shared/components/store/country-data';
+// import { Countries } from 'src/app/shared/interfaces/country';
 
 @Component({
   selector: 'app-details',
@@ -13,6 +15,8 @@ export class DetailsComponent implements OnInit {
   @Output() showRentalId = new EventEmitter<any>();
   @Output() firstname = new EventEmitter<any>();
   num: boolean = false;
+  public countries:any = countries;
+  
   constructor() { }
 
   ngOnInit(): void {

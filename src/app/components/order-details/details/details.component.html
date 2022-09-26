@@ -12,9 +12,9 @@
         <div class="col-6">
           <!-- firstName is required -->
           <label class="errorLabel opacity-0 float-right"
-            [ngClass]="{'opacity-100': (this.orderForm.get('firstName')?.touched && this.orderForm.get('firstName')?.hasError('required'))}">
+            [ngClass]="{'opacity-100 ': (this.orderForm.get('firstName')?.touched && this.orderForm.get('firstName')?.hasError('required'))}">
             <i class="fad fa-exclamation"></i>
-            firstName is required
+            firstname is required
           </label>
           <input type="text" class="form-control" placeholder="First name" formControlName="firstName"
             [ngClass]="{'!border-rose-600': (this.orderForm.get('firstName')?.touched && this.orderForm.get('firstName')?.hasError('required'))}">
@@ -25,7 +25,7 @@
           <label class="errorLabel opacity-0 float-right"
             [ngClass]="{'opacity-100': (this.orderForm.get('lastName')?.touched && this.orderForm.get('lastName')?.hasError('required'))}">
             <i class="fad fa-exclamation"></i>
-            lastName is required
+            lastname is required
           </label>
           <input type="text" class="form-control" placeholder="Last name" formControlName="lastName"
             [ngClass]="{'!border-rose-600': (this.orderForm.get('lastName')?.touched && this.orderForm.get('lastName')?.hasError('required'))}">
@@ -37,8 +37,9 @@
               Phone Number
             </label>
             <!-- Phone is required -->
-            <label class="errorLabel opacity-0"
-              [ngClass]="{'opacity-100': (this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required'))}">
+            <label class="errorLabel opacity-0 "
+              [ngClass]="{'opacity-100': (this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required')) , 
+            'hidden': this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength')}">
               <i class="fad fa-exclamation"></i>
               phone is required
             </label>
@@ -46,16 +47,23 @@
             <label class="errorLabel "
             *ngIf="this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength')">
               <i class="fad fa-exclamation"></i>
-              phone must be 9 numbers
+              phone at least 9 numbers
             </label>
           </div>
-          <div class="form-control flex items-center py-0"
-            [ngClass]="{'!border-rose-600': this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required') || this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength') }">
-            +971
+          <!-- 'border-[#86b7fe]': this.orderForm.get('phone')?.touched} -->
+          <div class="form-control flex items-center py-0 "
+            [ngClass]="{'!border-rose-600': this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('required') || this.orderForm.get('phone')?.touched && this.orderForm.get('phone')?.hasError('minlength')  }">
+            <select class="bg-transparent w-1/2" name="country" id="country">
+              <option value="+971" disabled selected>+971 </option>
+              <option *ngFor="let country of countries" [value]="country.dial_code">
+                {{country.name}} :
+                {{country.dial_code}}
+              </option>
+            </select>
             <div class="solidCol border-[1px] ml-2">
             </div>
-            <input (input)="onInput($event)" minlength="9" maxlength="9" type="text"
-              class="form-control mb-0 customFormControl !h-[40px]" placeholder="123123123" formControlName="phone">
+            <input (input)="onInput($event)" minlength="9" maxlength="10" type="text"
+              class=" phoneInput mb-0 customFormControl !h-[40px]" placeholder="123123123" formControlName="phone">
           </div>
         </div>
         <div class="col-12">

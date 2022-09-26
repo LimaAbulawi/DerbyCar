@@ -38,7 +38,8 @@ import { HomeModule } from './components/home/home.module';
     RouterModule ,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    // HomeModule
+    // HomeModule,
+    // OrderDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -101,6 +101,7 @@ body {
 .form-control:focus {
     box-shadow: none !important;
     background-color: #E4E4E4;
+    border-color: #86b7fe !important;
 }
 
 .whitePath {
@@ -151,4 +152,7 @@ body {
     font-size: 14px;
     --tw-text-opacity: 1;
     color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+select{
+    outline: 0;
 }
