@@ -15,11 +15,18 @@ export class DetailsComponent implements OnInit {
   @Output() showRentalId = new EventEmitter<any>();
   @Output() firstname = new EventEmitter<any>();
   num: boolean = false;
-  public countries:any = countries;
-  
+  public countries: any = countries;
+
+  selectedOption = "+971";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(event: any) {
+    console.log("event", event.target.value)
+    this.selectedOption = event.target.value;
   }
 
   orderForm = new FormGroup({

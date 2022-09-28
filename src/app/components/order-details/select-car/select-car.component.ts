@@ -35,7 +35,7 @@ export class SelectCarComponent implements OnInit {
         items:2.2,
       },
       600: {
-        items: 3.5,
+        items: 3.3,
       },
       1000: {
         items: 4.5,

@@ -51,8 +51,8 @@
     </div>
 </nav>
 
-<div class="md:flex md:flex-wrap mobile-row-reverse md:ml-6">
-    <div class=" col-md-6 " [ngClass]="{'col-md-9' : select}">
+<div class="md:flex md:flex-wrap mobile-row-reverse md:ml-6 md:mt-8">
+    <div class=" col-md-6 " [ngClass]="{'col-md-8 , md:w-[70%]' : select}">
         <div [ngClass]="{'d-block' : !Order , 'hidden' : Order}">
             <app-details (showRentalId)="rentalTermId(show)" (newItemEvent)="addItem($event)"
                 firstname="firstname($event)">
@@ -99,24 +99,24 @@
                     </div>
                 </div>
                 <div class="trans" [ngClass]="{'active' : Order}">
-                    <div class="flex items-baseline mt-8 md-padding">
+                    <div class="flex items-baseline  md-padding">
                         <div class="whitePath"></div>
                         <div class="whiteDetails ml-1">
                             Order Details
                         </div>
                     </div>
-                    <div class="mt-2 text-base md-padding">Hello <label class="text-white text-base"> LAST
+                    <div class="mt-2  md:!mt-6 text-base md-padding">Hello <label class="text-white text-base"> LAST
                             NAME</label>,
                     </div>
                     <div class="trans" [ngClass]="{'active' : select}">
-                        <div class="mt-2 text-base  md-padding">Duration Form <label class="text-white text-base">
+                        <div class="mt-2 md:!mt-6 text-base  md-padding">Duration Form <label class="text-white text-base">
                                 01/01/2021</label>,
                         </div>
-                        <div class="mt-2 text-base md-padding">To<label class="text-white text-base">
+                        <div class="mt-2 md:!mt-6 text-base md-padding">To<label class="text-white text-base">
                                 05/01/2021</label>,
                         </div>
                     </div>
-                    <div class="trans" [ngClass]="{'active' : showotp}">
+                    <div class="trans md:!mt-6" [ngClass]="{'active' : showotp}">
                         <img class="float-right w-80 md:hidden" src="../../../assets/1DS48_GG2.png">
                         <img class="float-right  w-96  hidden md:block " src="../../../assets/1DS48_GG2@2x.png">
                     </div>
@@ -131,14 +131,14 @@
     <div class="text-center flex mx-auto">
         <ul class="main-menu" >
             <li [ngClass]="{ 'hidden' :!isShown }">
-                <a routerLink="/home">
+                <a routerLink="/" (click)="isShown=!isShown">
                     Home
                 </a>
             </li>
-            <li [ngClass]="{ 'hidden' :!isShown }"><a routerLink="/details">Rent A Car</a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a routerLink="/details" (click)="isShown=!isShown">Rent A Car</a></li>
             <!-- <li><a routerLink="/ourcars">Our Cars</a></li> -->
-            <li [ngClass]="{ 'hidden' :!isShown }"><a href="">About Us </a></li>
-            <li [ngClass]="{ 'hidden' :!isShown }"><a href="">Contact US </a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a routerLink="/aboutus" (click)="isShown=!isShown">About Us </a></li>
+            <li [ngClass]="{ 'hidden' :!isShown }"><a routerLink="/contactus" (click)="isShown=!isShown">Contact US </a></li>
         </ul>
     </div>
 </div>
