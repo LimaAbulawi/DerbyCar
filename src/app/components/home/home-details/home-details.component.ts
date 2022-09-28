@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+// import Typewriter from 't-writer.js';
+// import ngtypewriter from '';
+
 @Component({
   selector: 'app-home-details',
   templateUrl: './home-details.component.html',
@@ -12,6 +15,9 @@ export class HomeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  list = ['Daily','Weekly ', 'Monthly' ]
+
  // owl-carousel 
  customOptions: OwlOptions = {
   loop: true,
@@ -68,7 +74,5 @@ RrentNow(){
   this.router.navigate(['/details']);
  
 }
-
-isShown: boolean = false;
 
 }

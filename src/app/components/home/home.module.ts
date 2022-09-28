@@ -6,6 +6,7 @@ import { HomeDetailsComponent } from './home-details/home-details.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { AngularTypewriterEffectModule } from 'angular-typewriter-effect';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CarouselModule
+    CarouselModule,
+    AngularTypewriterEffectModule 
   ]
 })
 export class HomeModule { }

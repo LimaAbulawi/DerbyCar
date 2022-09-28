@@ -17,7 +17,7 @@ import { SelectCarComponent } from './components/order-details/select-car/select
 import { OTPComponent } from './components/order-details/otp/otp.component';
 import { DoneComponent } from './components/order-details/done/done.component';
 import { HomeModule } from './components/home/home.module';
-
+import { AngularTypewriterEffectModule } from 'angular-typewriter-effect';
 
 
 @NgModule({
@@ -38,6 +38,7 @@ import { HomeModule } from './components/home/home.module';
     RouterModule ,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    AngularTypewriterEffectModule 
     // HomeModule,
     // OrderDetailsModule
   ],
