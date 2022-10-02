@@ -14,7 +14,9 @@ export class RentalTermComponent implements OnInit {
   active: number = 1;
   RentalTermForm = new FormGroup({
     frequency: new FormControl('Daily', Validators.required),
-    calendar: new FormControl(''),
+    startdate: new FormControl('', Validators.required),
+    enddate: new FormControl('', Validators.required),
+
   });
 
   constructor() { }

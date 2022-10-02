@@ -7,7 +7,8 @@ import { RentalTermComponent } from './rental-term/rental-term.component';
 import { SelectCarComponent } from './select-car/select-car.component';
 import { OTPComponent } from './otp/otp.component';
 import { DoneComponent } from './done/done.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { DoneComponent } from './done/done.component';
   ],
   imports: [
     CommonModule,
-    OrderDetailsRoutingModule
+    OrderDetailsRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class OrderDetailsModule { }

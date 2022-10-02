@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
   }
 
   onSelected(event: any) {
-    console.log("event", event.target.value)
+
     this.selectedOption = event.target.value;
   }
 
@@ -42,9 +42,12 @@ export class DetailsComponent implements OnInit {
 
   submited() {
     if (!this.orderForm.valid) {
-      console.log(this.orderForm.value);
       this.orderForm.markAllAsTouched();
     }
+
+    this.orderForm.controls.phone.setValue(this.destroyMask( this.orderForm.controls.phone.value))
+    console.log(this.orderForm.controls.phone.value);
+
     if (this.orderForm.valid) {
       this.showRentalId.emit("show");
       this.newItemEvent.emit(true);
@@ -56,20 +59,21 @@ export class DetailsComponent implements OnInit {
   placeholder: any | undefined;
 
   onInput(event: any) {
-
     event.target.value = this.destroyMask(event.target.value);
+  }
+    
+  destroyMask(event: any) {
+    return event.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  }
+
+}
     // if (event.target.value == "") {
     //   this.num = true;
     // }else{
     //   this.num = false;
     // }
     // event.target.value = this.createMask(this.placeholder);
-  }
-  destroyMask(event: any) {
 
-    return event.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-  }
-  // createMask(event: any) {
+      // createMask(event: any) {
   //   return event.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
   // }
-}  

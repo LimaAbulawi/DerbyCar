@@ -28,14 +28,29 @@
             </div>
         </div>
         <!--  Select the date -->
-        <div class="mt-6">
+        <div class="mt-14">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate placeholder="Start date" formControlName="startdate" >
+                  <input matEndDate placeholder="End date" formControlName="enddate">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+          
+          
+        <!-- <div class="mt-6">
             <div class="formcontrollabel">
                 Select the date
             </div>
             <div class="bg-[#F1F1F1] w-full h-[181px] rounded-xl">
                 <input type="date" class="w-5">
             </div>
-        </div>
+        </div> -->
+
         <!-- next button  -->
         <div class="w-40">
             <div class="next relative">

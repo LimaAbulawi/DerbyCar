@@ -19,7 +19,7 @@ export class OrderDetailsComponent implements OnInit {
   margin3: boolean= false;
 
   constructor() {
-    console.log(this.Order)
+
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class OrderDetailsComponent implements OnInit {
 
   addItem(done: boolean) {
     this.Order = done;
-    console.log(this.Order)
+    
   }
   selectCar(select: boolean) {
     this.select = select;
@@ -78,7 +78,6 @@ export class OrderDetailsComponent implements OnInit {
   }
   
   firstname(name: string) {
-    console.log(name)
     this.name = name;
   }
 

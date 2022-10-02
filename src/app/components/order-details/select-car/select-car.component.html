@@ -2,32 +2,25 @@
 
     <div class="ml-7 md:ml-0">
         <label for="" class="text-2xl font-semibold mb-9">Select Car</label>
+        <label class="opacity-0 text-red-500" [ngClass]="{'!opacity-100' : isRequired}">you must choice car</label>
         <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide class="custom">
                 <div class="slide bg-[#ff9700] ">
-                    <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)">
+                    <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)" (click)="onClick($event)" 
+                    value="../../../assets/1DS48_GG2slider.png">
                     </div>
                     <label class="absolute bottom-4 left-4">chevrolate</label>
                 </div>
             </ng-template>
             <ng-template carouselSlide class="custom">
-                <div class="slide bg-[#ff9700] ">
-                    <div class="image-container" style="background-image: url(../../../assets/LIMA.png)">
+                <div class="slide bg-[#ffeacb] " >
+                    <div class="image-container" style="background-image: url(../../../assets/LIMA.png)" >
                     </div>
                     <label class="absolute bottom-4 left-4">chevrolate</label>
                 </div>
             </ng-template>
             <ng-template carouselSlide class="custom">
-                <div class="slide bg-[#ff9700] ">
-                    <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)">
-
-                    </div>
-
-                    <label class="absolute bottom-4 left-4">chevrolate</label>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide class="custom">
-                <div class="slide bg-[#ff9700] ">
+                <div class="slide bg-[#ffeacb] ">
                     <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)">
 
                     </div>
@@ -36,7 +29,16 @@
                 </div>
             </ng-template>
             <ng-template carouselSlide class="custom">
-                <div class="slide bg-[#ff9700] ">
+                <div class="slide bg-[#ffeacb] ">
+                    <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)">
+
+                    </div>
+
+                    <label class="absolute bottom-4 left-4">chevrolate</label>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide class="custom">
+                <div class="slide bg-[#ffeacb] ">
                     <div class="image-container" style="background-image: url(../../../assets/1DS48_GG2slider.png)">
                     </div>
                     <label class="absolute bottom-4 left-4">chevrolate</label>

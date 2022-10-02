@@ -30,8 +30,8 @@
           <input type="text" class="form-control" placeholder="Last name" formControlName="lastName"
             [ngClass]="{'!border-rose-600': (this.orderForm.get('lastName')?.touched && this.orderForm.get('lastName')?.hasError('required'))}">
         </div>
+        <!-- phone -->
         <div class="col-12">
-          <!-- phone -->
           <div class="flex justify-between">
             <label for="" class="formcontrollabel">
               Phone Number
@@ -61,16 +61,16 @@
               </select>
               <div class="ml-1">{{selectedOption}}</div>
             </div>
-
             <div class="solidCol border-[1px] ml-1">
             </div>
-            <input (input)="onInput($event)" minlength="9" maxlength="10" type="text"
-              class=" phoneInput mb-0 customFormControl !h-[40px]" placeholder="123123123" formControlName="phone">
+            <input  (input)="onInput($event)" minlength="9" maxlength="10" type="text"
+              class=" phoneInput mb-0 customFormControl !h-[40px]" placeholder="0123456789" formControlName="phone">
           </div>
         </div>
+        <!-- email -->
         <div class="col-12">
           <div class="flex justify-between">
-            <label class="formcontrollabel"> 
+            <label class="formcontrollabel">
               Your Email
             </label>
             <!-- email is required -->
